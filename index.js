@@ -21,6 +21,10 @@ io.on("connection", (socket) => {
     console.log(data);
     io.emit('recived_new_post', data);
   });
+  socket.on('comment', (data) => {
+    console.log(data);
+    io.emit('new_comment', data);
+  });
 });
 
 const PORT = process.env.PORT || 3001;
